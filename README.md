@@ -34,3 +34,6 @@ Note: there's no server filtering, you need to apply the filter in your code.
 You have **24 hours** to complete all questions.
 
 **Good Luck!**
+
+## yarn install
+## yarn start

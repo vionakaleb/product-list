@@ -1,0 +1,23 @@
+.dropdownItems {
+  position: absolute;
+  top: 45px;
+  background: white;
+  width: calc(100% - 20px);
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem grey;
+  height: 130px;
+  overflow: auto;
+  z-index: 1;
+}
+
+.dropdownItems > p {
+  margin: 5px;
+  padding: 5px;
+}
+
+.dropdownItems > p:hover {
+  cursor: pointer;
+  background: #dfdfdf;
+  border-radius: 5px;
+}
