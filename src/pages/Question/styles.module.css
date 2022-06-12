@@ -1,0 +1,10 @@
+.imagePicker {
+  margin-bottom: 14px;
+}
+.imagePicker svg {
+  margin: 20px;
+  transform: scale(.7);
+}
+.imagePicker div div div div img {
+  object-fit: contain !important;
+}

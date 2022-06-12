@@ -1,0 +1,21 @@
+before_script:
+  - sudo su www
+  - pwd
+  - whoami
+  - cd /home/www/frontend
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+
+  script:
+    - sudo su -c 'git fetch' www
+    - sudo su -c 'git checkout -f $BRANCH' www
+    - sudo su -c 'git pull origin $BRANCH' www
+    # - $CMD 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" && cd /home/www/frontend && nvm use && yarn && yarn build'
+    - sudo su -c 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" && cd /home/www/frontend && nvm use && yarn cache clean && yarn && yarn build' www
+  when: on_success
+  only:
+    - "development"
